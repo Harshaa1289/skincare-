@@ -1,0 +1,89 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Skin Care Product Detection using Image Processing</title>
+<meta name="keywords" content="" />
+<meta name="Premium Series" content="" />
+<link rel="stylesheet" href="{{ url_for('static', filename='default.css') }}">
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Upload Image");
+	formObj.t1.focus();
+	return false;
+	}
+	formObj.actionUpdateData.value="update";
+	return true;
+	}
+	</script>
+</head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<h1><span><center>Skin Care Product 
+
+</center></span></h1>
+		
+	</div>
+	<div id="menu">
+		<ul id="main">
+		
+		<li><a href="UploadImage"><font size="3" color="white">Upload Ingredients Image</a></li><td></td>
+		<li><a href="index"><font size="3" color="white">Logout</a></li><td></td>
+			<td></td>
+			
+     
+		</ul>
+		
+	</div>
+	
+</div>
+
+<div id="wrapper">
+	<!-- start page -->
+	<div id="page">
+		 <form name ="frm" method="post" action="/UploadImageAction" enctype="multipart/form-data" onsubmit="return validate(this);">
+		<!-- start content -->
+		<div id="content">
+		<div class="flower"><center><img src="{{ url_for('static', filename='images/tra.jpg') }}" alt="" width="660" height="200" /></center></div>
+			<br/><br/>
+			<br/>
+			
+			<center><font size="3" color="red">{{ data|safe }}</font></center>
+		
+			<div style=" bottom: 30px; width: 100%; text-align: center; transform: translateX(40%);">
+				<table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <h3>Upload Product Image</h3>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="file" name="t1" size="20"/></td>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</div>
+			
+</form>
+			</table>
+			</center><br /><div class="post">
+				
+				<div class="entry">
+					
+				</div>
+			</div>
+		</div>
+		<!-- end content -->
+		<!-- start sidebars -->
+		
+		<!-- end sidebars -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<!-- end page -->
+</div>
+</body>
+</html>

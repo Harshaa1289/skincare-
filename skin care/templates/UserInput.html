@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Skin Care Product </title>
+<meta name="keywords" content="" />
+<meta name="Premium Series" content="" />
+<link rel="stylesheet" href="{{ url_for('static', filename='default.css') }}">
+<style>
+    /* CSS styles for layout */
+    .right {
+        float: right;
+        width: 40%; /* Adjust width as needed */
+        margin-right: -55%; /* Add some margin for separation */
+        margin-top: -190px; /* Adjust negative margin to move it up */
+    }
+</style>
+
+</head>
+<body>
+<!-- start header -->
+<div id="header">
+    <div id="logo">
+        <h1><span><center>Skin Care Product</center></span></h1>
+    </div>
+    <div id="menu">
+        <ul id="main">
+            <li><a href="UploadImage"><font size="3" color="white">Upload Ingredients Image</a></li>
+            <li><a href="index"><font size="3" color="white">Logout</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="wrapper">
+    <!-- start page -->
+    <div id="page">
+        <form name ="frm" method="post" action="/PredictAction" onsubmit="return validate(this);">
+        <!-- start content -->
+        <div class="flower" style="position:relative;">
+            <div style="position:absolute; top:0; left:0; width:100%; height:100%; background-color:rgba(255, 255, 255, 0.9);"></div>
+            <center>
+                <img src="{{ url_for('static', filename='images/tra.jpg') }}" alt="" width="960" height="350" style="margin-left: -20%;" />
+            </center>
+        </div>
+                
+        
+        <div id="content">
+            <br/>
+            
+            <!-- Heading for Skin Type -->
+            <div style="position:absolute; top:280px; left:50px; color:white; font-size:18px; margin-left: -5%;">
+            <h4 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Choose Your Skin Type</h4>
+            <table align="center">
+                <tr><td><font size="3" color="black"><strong>Combination</strong></td><td><select name="t1">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+
+                <tr><td><font size="3" color="black"><strong>Dry</strong></td><td><select name="t2">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+
+                <tr><td><font size="3" color="black"><strong>Normal</strong></td><td><select name="t3">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+
+                <tr><td><font size="3" color="black"><strong>Oily</strong></td><td><select name="t4">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+
+                <tr><td><font size="3" color="black"><strong>Sensitive</strong></td><td><select name="t5">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+            </table> <br> </div>
+
+            <!-- Heading for Skin Issues -->
+            <div style="position:absolute; top:280px; left:50px; color:white; font-size:18px; margin-left: 25%;">
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Choose Your Skin Issues</h4>
+            <table align="center">
+                <tr><td><font size="3" color="black"><strong>Acne</strong></td><td><select name="t6">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+
+                <tr><td><font size="3" color="black"><strong>Pimples</strong></td><td><select name="t7">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+
+                <tr><td><font size="3" color="black"><strong>Black Heads</strong></td><td><select name="t8">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+
+                <tr><td><font size="3" color="black"><strong>Dull Skin</strong></td><td><select name="t9">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+
+                <tr><td><font size="3" color="black"><strong>Wrinkles</strong></td><td><select name="t10">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+
+                <tr><td><font size="3" color="black"><strong> Circles</strong></td><td><select name="t11">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+            </table><br> </div> <br>
+
+            <!-- Heading for Environmental Conditions -->
+            <div style="position:absolute; top:280px; right:-50px; color:white; font-size:18px; margin-right: 10%;">
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Environmental Conditions</h4>
+            <table align="center">
+                <tr><td><font size="3" color="black"><strong>Pollution</strong></td><td><select name="t12">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+
+                <tr><td><font size="3" color="black"><strong>Blue Light</strong></td><td><select name="t13">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select></td></tr>
+
+                <tr><td><font size="3" color="black"><strong>Exposure</strong></td><td><select name="t14">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+				</select></td></tr> </table></div>
+
+    <tr>
+        <td>
+            <div style="position:absolute; top:500px; left:250px; color:white; font-size:18px; margin-left: 25%;">
+            <br>
+            &nbsp;
+            <input type="submit" value="Submit" style="position: relative; top: -20px;">
+        </td>
+    </tr></div>
+    </table>
+</form>
+			</table>
+			</center><br /><div class="post">
+				
+				<div class="entry">
+					
+				</div>
+			</div>
+		</div>
+		<!-- end content -->
+		<!-- start sidebars -->
+		
+		<!-- end sidebars -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<!-- end page -->
+</div>
+</body>
+</html>
